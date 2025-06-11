@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
 function ToyForm({ onAddToy }) {
+  // Controlled for inputs for the toy name and image URL
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
 
+  // Handles form submission by sending POST request and resetting inputs for cleanup
   function handleSubmit(e) {
     e.preventDefault();
     const newToy = { name, image, likes: 0 };

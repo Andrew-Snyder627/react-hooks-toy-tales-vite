@@ -1,12 +1,14 @@
 import React from "react";
 
 function ToyCard({ toy, onDelete, onLike }) {
+  // Send a DELETE request to remove the toy, then notify parent to update state
   function handleDelete() {
     fetch(`http://localhost:3001/toys/${toy.id}`, {
       method: "DELETE",
     }).then(() => onDelete(toy.id));
   }
 
+  // Send PATCH request to increment likes, then notify parent to update state
   function handleLike() {
     const updatedLikes = toy.likes + 1;
 
