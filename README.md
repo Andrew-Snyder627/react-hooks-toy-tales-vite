@@ -1,44 +1,104 @@
-# Practice Challenge: Toy Tales
+# Toy Tales
 
-You've got a friend in need! Again!
+A full CRUD React application for managing a toy collection! Users can view, add, like, and delete toys using a connected `json-server` backend. This project demonstrates the use of React Hooks (`useState`, `useEffect`), event handling, and RESTful API integration.
 
-Andy has misplaced of his toys (again) and need your help to organize them.
+---
 
-## Setup
+## Features
 
-All the information about Andy's toys can be found in the `db.json` file. We'll
-be using `json-server` to create a RESTful API for our database.
+- ✅ **View Toys**: Fetch and display all toys on page load.
+- ✅ **Add Toys**: Submit a form to add a new toy to the collection.
+- ✅ **Like Toys**: Increase the like count of individual toys with a button.
+- ✅ **Delete Toys**: Remove toys from the collection with a "Donate" button.
 
-Run `npm install` to install our dependencies.
+---
 
-Then, run `npm run server` to start up `json-server` on `http://localhost:3001`.
+## Screenshot
 
-In another tab, run `npm run dev` to start up our React app at `http://localhost:3000`.
+Add your screenshot here:
 
-In another tab, run `npm run test` to run the test suite.
+![Toy Tales Demo](src/assets/Screenshot%202025-06-10%20at%208.52.05 PM.png)
 
-Before you start building out the application, the first step that you should
-take is to examint the current code and component hierarchy. This will tell you
-how components can pass data to each other as well as where that information should
-be stored.
+---
 
-## Deliverables
+## Technologies Used
 
-- _When our application loads_, make a GET request to `/toys` to fetch the toy
-  array. Given your component tree, think about which component should be
-  responsible for the array. After you have put the data in the proper
-  component, your next job is to render the `ToyCard` components on the page.
+- React (Vite)
+- JavaScript (ES6+)
+- JSX
+- JSON Server
+- HTML/CSS
 
-- _When the `ToyForm` is submitted_, make a POST request to `/toys` to save a
-  new toy to the server. Using the ideas of controlled form and inverse data
-  flow, think about how to render a new `ToyCard` for the toy that you created.
+---
 
-- _When the `Donate to Goodwill` button is clicked_, make a DELETE request to
-  `/toys/:id` with the ID of the toy that was clicked to delete the toy from the
-  server. The `ToyCard` that you clicked on should also be removed from the DOM.
+## Getting Started
 
-- _When the like button is clicked_, make a PATCH request to `/toys/:id` with
-  the id of the toy that was clicked, along with the new number of likes (this
-  should be sent in the body of the PATCH request, as a object:
-  `{ likes: 10 }`), to update the toy on the server. Clicking on the button
-  should also increase the number of likes on the DOM.
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/Andrew-Snyder627/toy-tales.git
+cd toy-tales
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the backend server
+
+This uses `json-server` to serve toy data.
+
+```bash
+npm run server
+# Runs on http://localhost:3001
+```
+
+### 4. Start the frontend
+
+```bash
+npm run dev
+# Opens on http://localhost:3000
+```
+
+---
+
+## Run Tests
+
+To run the full test suite:
+
+```bash
+npm run test
+```
+
+All tests should pass once CRUD functionality is implemented correctly.
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── App.jsx
+│   ├── Header.jsx
+│   ├── ToyForm.jsx
+│   ├── ToyContainer.jsx
+│   └── ToyCard.jsx
+└── __tests__/
+    ├── AllToys.test.jsx
+    ├── Donate.test.jsx
+    ├── Like.test.jsx
+    └── ToyForm.test.jsx
+```
+
+---
+
+## Best Practices Followed
+
+- Clean and readable code with inline comments
+- State lifted to top-level `App` component
+- Stateless components handle presentation and user events
+- JSON Server used to simulate RESTful backend
+- Functional components with hooks instead of class components
