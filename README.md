@@ -18,8 +18,8 @@ In another tab, run `npm run dev` to start up our React app at `http://localhost
 In another tab, run `npm run test` to run the test suite.
 
 Before you start building out the application, the first step that you should
-take is to examint the current code and component hierarchy. This will tell you 
-how components can pass data to each other as well as where that information should 
+take is to examint the current code and component hierarchy. This will tell you
+how components can pass data to each other as well as where that information should
 be stored.
 
 ## Deliverables
